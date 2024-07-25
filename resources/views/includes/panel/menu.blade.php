@@ -8,13 +8,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="./examples/icons.html">
+      <a class="nav-link " href="{{('/tareas')}}">
         <i class="ni ni-book-bookmark text-blue"></i> Mis Tareas
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="./examples/maps.html">
-        <i class="ni ni-pin-3 text-orange"></i> Maps
+      <a class="nav-link " href="#">
+        <i class="ni ni-single-02 text-orange"></i> Usuarios
       </a>
     </li>
     <li class="nav-item">
