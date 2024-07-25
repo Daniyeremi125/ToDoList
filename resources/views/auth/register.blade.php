@@ -31,7 +31,7 @@
                         <div class="card-body p-md-5 mx-md-4">
           
                           <div class="text-center">
-                            <img src="{{asset('assets/todo.jpg')}}"
+                            <img src="{{asset('assets/logoos.jpg')}}"
                               style="width: 185px;" alt="logo">
                             <h4 class="mt-1 mb-5 pb-1">Tus tareas te esperan</h4>
                           </div>
@@ -78,7 +78,7 @@
                         </div>
                       </div>
                       <div class="col-sm-6 px-0 d-none d-sm-block">
-                        <img src="{{asset('assets/login.jpg')}}"
+                        <img src="{{asset('assets/reggg.jpg')}}"
                           alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
                       </div>
                     </div>
