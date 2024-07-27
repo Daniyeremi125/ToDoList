@@ -7,6 +7,7 @@
   <title>
     {{config('app.name')}}
   </title>
+  
   <!-- Favicon -->
   <link href="{{ asset ('img/brand/favicon.png') }}" rel="icon" type="image/png">
   <!-- Fonts -->
@@ -25,7 +26,7 @@
                   <h3 class="mb-0">Tareas</h3>
                 </div>
                 <div class="col text-right">
-                  <a href="{{url('/Tareas/create') }}" class="btn btn-sm btn-primary">Nueva Tarea</a>
+                  <a href="{{url('tareas/create') }}" class="btn btn-sm btn-primary">Agregar Tarea</a>
                 </div>
               </div>
             </div>
@@ -34,28 +35,43 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripción</th>
+                    <th scope="col">Nombre de la tarea</th>
+                    <th scope="col">Descripción de la tarea</th>
                     <th scope="col">Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
+                  @foreach ($tasks as $tareas)
+                      
+              
                   <tr>
                     <th scope="row">
-                      /argon/
+                      {{$tareas->name}}
                     </th>
                     <td>
-                      4,569
+                      {{$tareas->description}}
                     </td>
-                    <td>
-                      340
-                    </td>
+                    
                     <td>
                       <a href="" class="btn btn-sm btn-primary">Editar</a>
                       <a href="" class="btn btn-sm btn-danger">Eliminar</a>
                     </tr>
-                 
+                    @endforeach
                 </tbody>
               </table>
             </div>
           </div>
+
+          <!-- Navigation -->
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('home') }}"
+            onclick="event.preventDefault(); document.getElementById('formLogout').submit();"
+        >
+          <i class="fas fa-sign-in-alt text-danger"></i> Regresar 
+        </a>
+        <form action="{{ route('home') }}" method="GET"  style="display: none;" id="formLogout">
+            @csrf
+        </form>
+      </li>
+    </ul>

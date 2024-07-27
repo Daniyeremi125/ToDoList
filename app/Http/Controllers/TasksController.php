@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tasks;
 
 class TasksController extends Controller
 {
@@ -13,6 +14,22 @@ class TasksController extends Controller
     }
 
     public function index(){
-        return view('Tasks.index');
+        $tasks = Tasks::all();
+        return view('Tasks.index',compact('tasks'));
+    }
+
+    public function create (){
+        return view('Tasks.create');
+    }
+
+    public function sendData(Request $request){
+
+        
+        $tasks = new Tasks();
+        $tasks->name = $request->input('name');
+        $tasks->description = $request->input('description');
+        $tasks->save();
+
+        return redirect('tareas');
     }
 }
