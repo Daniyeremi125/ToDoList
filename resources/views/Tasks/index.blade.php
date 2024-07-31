@@ -53,8 +53,15 @@
                     </td>
                     
                     <td>
-                      <a href="{{ url('/tareas'.$tareas->id.'/edit')}}" class="btn btn-sm btn-primary">Editar</a>
-                      <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+                     
+                      
+                      <form action="{{ url('tareas'.$tareas->id)}}" method="POST"> 
+                        @csrf
+                        @method('DELETE')
+                        <a href="{{ url('tareas'.$tareas->id.'edit')}}" class="btn btn-sm btn-primary">Editar</a>
+                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                      </form>
+                      
                     </tr>
                     @endforeach
                 </tbody>

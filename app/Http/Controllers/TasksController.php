@@ -46,4 +46,9 @@ class TasksController extends Controller
 
         return redirect('tareas');
     }
+
+    public function destroy(Tasks $tasks){
+        $tasks->delate();
+        return redirect('tareas');
+    }
 }

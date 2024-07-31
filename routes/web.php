@@ -20,4 +20,4 @@ Route::get('/tareas/{Tasks}/edit', [App\Http\Controllers\TasksController::class,
 Route::post('/tareas', [App\Http\Controllers\TasksController::class, 'sendData']);
 
 Route::put('/tareas/{Tasks}', [App\Http\Controllers\TasksController::class, 'update']);
-Route::delate('/tareas/{Tasks}', [App\Http\Controllers\TasksController::class, 'update']);
+Route::delete('/tareas/{Tasks}', [App\Http\Controllers\TasksController::class, 'destroy']);
