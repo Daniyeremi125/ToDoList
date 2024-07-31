@@ -32,4 +32,18 @@ class TasksController extends Controller
 
         return redirect('tareas');
     }
+
+    public function edit(Tasks $tasks){
+        return view('Tasks.edit',compact('tasks'));
+    }
+    public function update(Request $request, Tasks $tasks){
+
+        
+        
+        $tasks->name = $request->input('name');
+        $tasks->description = $request->input('description');
+        $tasks->save();
+
+        return redirect('tareas');
+    }
 }

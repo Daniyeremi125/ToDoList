@@ -53,7 +53,7 @@
                     </td>
                     
                     <td>
-                      <a href="" class="btn btn-sm btn-primary">Editar</a>
+                      <a href="{{ url('/tareas'.$tareas->id.'/edit')}}" class="btn btn-sm btn-primary">Editar</a>
                       <a href="" class="btn btn-sm btn-danger">Eliminar</a>
                     </tr>
                     @endforeach
