@@ -13,42 +13,44 @@ class TasksController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index()
+    {
         $tasks = Tasks::all();
-        return view('Tasks.index',compact('tasks'));
+        return view('Tasks.index', compact('tasks'));
     }
 
-    public function create (){
+    public function create()
+    {
         return view('Tasks.create');
     }
 
-    public function sendData(Request $request){
-
-        
-        $tasks = new Tasks();
-        $tasks->name = $request->input('name');
-        $tasks->description = $request->input('description');
-        $tasks->save();
-
-        return redirect('tareas');
-    }
-
-    public function edit(Tasks $tasks){
-        return view('Tasks.edit',compact('tasks'));
-    }
-    public function update(Request $request, Tasks $tasks){
-
-        
-        
-        $tasks->name = $request->input('name');
-        $tasks->description = $request->input('description');
-        $tasks->save();
+    public function sendData(Request $request)
+    {
+        $task = new Tasks();
+        $task->name = $request->input('name');
+        $task->description = $request->input('description');
+        $task->save();
 
         return redirect('tareas');
     }
 
-    public function destroy(Tasks $tasks){
-        $tasks->delate();
+    public function edit(Tasks $task)
+    {
+        return view('Tasks.edit', compact('task'));
+    }
+
+    public function update(Request $request, Tasks $task)
+    {
+        $task->name = $request->input('name');
+        $task->description = $request->input('description');
+        $task->save();
+
+        return redirect('tareas');
+    }
+
+    public function destroy(Tasks $task)
+    {
+        $task->delete(); // Corregir "delate" a "delete"
         return redirect('tareas');
     }
 }

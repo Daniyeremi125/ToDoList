@@ -18,41 +18,39 @@
   <!-- CSS Files -->
   <link href="{{ asset('css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
 </head>
-
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">  Editar Tareas</h3>
-                </div>
-                <div class="col text-right">
-                  <a href="{{url('tareas') }}" class="btn btn-sm btn-success">
-                    <i class="fas fa-chevron-left"></i>
-                    Regresar</a>
-                </div>
-              </div>
-            </div>
-           
-        <div class="card-body" >
-
-      
-        
-            <form action="{{url('tareas'.tareas->id)}}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="form-group">
-                    <label for="name">Nombre de la tarea</label>
-                    <input type="text" name="name" class="form-control" value="{{old('name',$tasks->name)}}" required >
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Descripcion</label>
-                    <input type="text" name="description" class="form-control" value="{{old('description',$tasks->description )}}">
-                </div>
-                    <button type="submit" class="btn btn-sm btn-primary">Guardar Tarea</button>
-            </form>
-
-          </div>
-
+<body>
+  <div class="card shadow">
+    <div class="card-header border-0">
+      <div class="row align-items-center">
+        <div class="col">
+          <h3 class="mb-0">Editar Tareas</h3>
+        </div>
+        <div class="col text-right">
+          <a href="{{url('tareas') }}" class="btn btn-sm btn-success">
+            <i class="fas fa-chevron-left"></i>
+            Regresar
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-body">
+      <form action="{{ url('tareas/' . $task->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="form-group">
+          <label for="name">Nombre de la tarea</label>
+          <input type="text" name="name" class="form-control" value="{{ old('name', $task->name) }}" required>
         </div>
 
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <input type="text" name="description" class="form-control" value="{{ old('description', $task->description) }}">
+        </div>
+
+        <button type="submit" class="btn btn-sm btn-primary">Guardar Tarea</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
