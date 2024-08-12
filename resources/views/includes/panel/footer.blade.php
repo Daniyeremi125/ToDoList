@@ -9,7 +9,7 @@
         <ul class="nav nav-footer justify-content-center justify-content-xl-end">
           
           <li class="nav-item">
-            <a href="#" class="nav-link">Mis Tareas</a>
+            <a href="#" class="nav-link">TODO LIST</a>
           </li>
          
         </ul>
